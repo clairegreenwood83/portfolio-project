@@ -1,4 +1,4 @@
-body {
+body { 
     font-family: 'Nanum Gothic', sans-serif;
     color: black;
     margin: 50px;
@@ -7,27 +7,30 @@ body {
 }
 
 .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 100px 100px 200px 200px 1fr 100px 50px;
-    grid-template-areas: 
-    "header . nav nav"
-    "image title title title"
-    "image title title title"
+    display: grid;/* grid applied */
+    overflow: none;
+    word-break: break-all;
+    grid-template-columns: 1fr 1fr 1fr 1fr;/* 4 colums */
+    grid-template-rows: 75px 100px 200px 200px 1fr 100px;/* 6 rows */
+    grid-template-areas: /* grid layout defined using child element names */
+    "nav nav nav nav"
+    "header image title title"
+    ". image title title"
     "aside about about about"
     "aside work work work"
     "aside contact contact contact"
-    "footer footer footer footer"
     ;
-    padding: 20px;
 }
-
+/* child element*/
 .header {
     grid-area: header;
-    text-align: center;
+    text-align: center; 
+    font-size: 8vw; /* font-size changed to vw to be responsive */
+    font-family: 'Lobster', cursive;
+    display: flex; /* flexbox function enabled */
+    align-items: flex-start ; /* items aligned to the left of webpage */
 }
-
-
+/* child element */
 .nav {
     grid-area: nav;
     display: flex;
@@ -35,66 +38,81 @@ body {
     justify-content: space-evenly;
     padding-top: 20px;
     padding-bottom: 20px;
-    margin-bottom: 35px;
-    margin-left: 100px;
-    margin-right: 100px;
-    /*background-color: rgb(190, 231, 252);*/
-
-    
+    margin-bottom: 50px; 
+    font-size: 1.5vw; /* font responsive to different browser sizes */
 }
 
+/* child element */
 .image {
     grid-area: image;
+    margin-bottom: 30px;
+    width: 100%;
 }
 
+/* child element */
 .aside {
     grid-area: aside;
     border-right: solid;
     border-right-color: rgb(255, 122, 144);
     margin-right: 30px;
-    display: flex;
+    margin-top: 70px;
+    display: flex; /* flexbox enabled to position items in this element */
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
 
 }
-.about {
-    grid-area: about;
-    
+
+#about-me {
+    margin-top: 20px;
 }
 
-.about h2 {
-    text-align: left;
-}
 
+/* child element */
 .title {
     grid-area: title;
     text-align: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
 
 }
 
 .title h2 {
-    font-size: 60px;
-    
+    font-size: 4vw; /* vw allows font to be responsive in different web browsers */
+    font-family: 'Lobster', cursive;
+    object-fit: cover; /* item will retain its aspect ratio and fill entire container */
 }
 
-.title img {
-    width: 100%;
+/* child element */
+.about {
+    grid-area: about;
+    padding-top: 30px;
+    font-size: 1.5vw; /* font responsive to browser size */
+    display: flex;
+    align-items: center;
 }
+/* child element and new parent element*/
 .work {
     grid-area: work;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 425px 1fr;
+    grid-template-rows: 400px 300px;
     grid-template-areas: 
-    "project1 project1 project2"
-    ". project3 ."
+    "project1 project1 project1"
+    "project2 project3 project4"
     ;
 }
 
+.work > img {
+    width: 100%;
+    height: 100;
+    object-fit: cover;
+
+}
+
+/* child element within class=work */
 .project1 {
-    grid-area: project1 ;
-    padding-top: 45px;    
+    grid-area: project1 ;   
 }    
 
 .project1 h2 { 
@@ -108,8 +126,11 @@ body {
     object-fit: cover;
     max-height: 100%;
     position: relative;
-    display: flex;
-    align-content: center;
+
+}
+/* child element within class=work */
+.project2 {
+    grid-area: project2 ;
 }
 
 .project2 img {
@@ -127,6 +148,11 @@ body {
     z-index: 100;
 }
 
+/* child element within class=work */
+.project3 {
+    grid-area: project3 ;
+}
+
 .project3 img {
     width: 100%;
     object-fit: cover;
@@ -142,38 +168,111 @@ body {
     z-index: 100;
 }
 
-
-.project2 {
-    grid-area: project2 ;
-    min-width: 0;
+/* child element within class=work */
+.project4 {
+    grid-area: project4;
 }
 
-.project3 {
-    grid-area: project3 ;
-    min-width: 0;
+.project4 h2 { 
+    position: absolute;
+    color: white;
+    z-index: 100;
 }
 
+.project4 img {
+    width: 100%;
+    object-fit: cover;
+    max-height: 100%;
+    position: relative;
+}
 
+/* child element in main grid */
 .contact {
     grid-area: contact;
     margin-top: 60px;
-
-}
-
-
-.footer {
-    grid-area: footer;
+    font-size: 1.5vw; /* font is responsive to browser size */
+    object-fit: cover;
+    word-break: break-all;
 
 }
 
 .work a {
-    color: white;
-    text-decoration: none;
+    color: white; /* hyperlink font white */
+    text-decoration: none; /* removes hyperlink underline */
 }
 
 .nav a {
-    color: black;
-    text-decoration: none;
+    color: black; /* hyperlink font black */
+    text-decoration: none; /* removes hyperlink underline */
 }
 
+/* media queries to allow webpage content to be responsive and viewed correctly on various browser sizes to allow for a better user experience */
+@media only screen and (max-width: 1024px) { /* when browser width is less than 1024px this code will be applied */
+    .work {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* 2 columns */
+        grid-template-rows: 50px 50px 50px; /* 3 rows*/
+        grid-template-areas:
+        "project1 project1"
+        "project2 project3"
+        "project4 . ";
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 100px 200px 100px 100px 200px 100px;
+        grid-template-areas: 
+        "nav nav nav"
+        "image title title"
+        "image title title"
+        "about about about"
+        "work work work"
+        "contact contact contact"
+        ;
+    }
 
+    .aside {
+        display: none;/* removal of aside element as browser width decreases */
+    }
+
+    .header {
+        display: none;/* removal of header element as browser width decreases */
+    }
+}
+
+@media screen and (max-width: 768px) { /* when browser width is less than 768px this code will be applied */
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 100px 200px 100px 100px 200px 100px;
+        grid-template-areas: 
+        "nav nav nav"
+        "image title title"
+        "image title title"
+        "about about about"
+        "work work work"
+        "contact contact contact"
+        ;
+    }
+
+    .aside {
+        display: none;/* removal of aside element as browser width decreases */
+    }
+
+    .header {
+        display: none;/* removal of header element as browser width decreases */
+    } 
+   
+    .work {
+        display: grid;
+        grid-template-columns: 1fr; /* 1 column */
+        grid-template-rows: 50px 50px 50px 50px 50px; /* 5 rows */
+        grid-template-areas: /* project images will be viewed in a single column */
+        "project1"
+        "project2"
+        "project3"
+        "project4"
+        ;
+     }
+
+}

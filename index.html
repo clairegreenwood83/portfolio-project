@@ -1,71 +1,83 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="./assets/css/reset.css">
-        <link rel="stylesheet" href="./assets/css/style.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="./assets/css/reset.css"><!--link to reset css-->
+        <link rel="stylesheet" href="./assets/css/style.css"><!--link to css-->
+        <meta name="viewport" content="width=device-width, initial-scale=1" /><!--allows responsive elements to be viewed-->
         <meta charset="UTF-8" />
         <title> Claire Greenwood Portfolio </title>
+        <!--link to google fonts-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+        <!--link to google fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     
     </head>
 
-    <body>
-        <div class="grid">
-            <div class=header>
-                <h1> Claire Greenwood</h1>
-            </div>
-            <div class="nav">
-                <p><a href="#about-me">About me</a></p>
-                <p><a href="#work">Work</a></p>
-                <p><a href="#contact-me">Contact me</a></p>
-            </div>
-            <div class=title> 
-                <h2>"Hi, I'm Claire,<br>
-                    designer & web developer"</h2>
-            </div>
+    <body class="grid"><!--makes the whole page a CSS grid, this is the parent element-->
+        <header class=header><!--child element-->
+            <h1>CG</h1>
+        </header>
 
-            <div class="image">
-                <img src="./assets/images/avatar.png"/>
-            </div>
-            <div class="about">
-                <p>Lorem ipsum dolor sit amet. Non vero voluptas At odit ullam et voluptas perferendis ex facere quidem ex minus repellendus ad quidem ipsum et omnis quam. Est iure libero ea culpa nihil qui esse veritatis qui reprehenderit quaerat qui suscipit temporibus non odit reiciendis ut nulla error. In voluptatem adipisci sed libero ullam sed totam molestias non adipisci quisquam.</p>
-            </div>
-                
-            <div class="aside">
-                <div id="about-me"><h2>About me</h2></div>     
-                <div id="work"><h2>Work</h2></div>
-                <div id="contact-me"><h2>Contact me</h2></div>
+        <nav class="nav"><!--child element-->
+            <!--nav bar linked to associated sections on webpage-->
+            <p><a href="#about-me">About me</a></p>
+            <p><a href="#work">Work</a></p>
+            <p><a href="#contact-me">Contact me</a></p>
+        </nav>
 
+        <section class=title><!--child element-->
+            <h2>"Hi, I'm Claire,<br>
+                designer & web developer"</h2>
+        </section>
 
-            </div>
-            <div class="work">
-                <div id="work-header">
-                </div>
-                <div class="project1">
-                    <h2><a href="https://github.com/clairegreenwood83">Project 1</a></h2>
-                <a href="https://github.com/clairegreenwood83"><img src="./assets/images/boot-unsplash.png"></a>
-                </div>
-                <div class="project2"> 
-                    <h2><a href="https://github.com/clairegreenwood83">Project 2</a></h2>
-                    <a href="https://github.com/clairegreenwood83"><img src="./assets/images/flowers.jpg"></a>
-            </div>
-                <div class="project3">
-                    <h2><a href="https://github.com/clairegreenwood83">Project 3</a></h2>
-                    <a href="https://github.com/clairegreenwood83"><img src="./assets/images/heart-flowers.jpg"></a>
-                </div>
-            </div>
-
-            <div class="contact">
-                <p>email: cg.clairegreenwood@gmail.com</p>
-                <p>github: clairegreenwood83</p>
-            </div>
-            <div class="footer">
-                <h2></h2>
-            </div>
+        <div class="image"><!--child element-->
+            <img src="./assets/images/avatar.png"/>
         </div>
 
+    
+        <section class="about"><!--child element-->
+                <p>I am a self-driven, passionate and creative web designer and developer, who enjoys solving complex and challenging real world problems.</p>
+        </section>
+                
+        <section class="aside"><!--child element-->
+            <div id="about-me"><h2>About me</h2></div>     
+            <div id="work"><h2>Work</h2></div>
+            <div id="contact-me"><h2>Contact me</h2></div>
+        </section>
+
+        <section class="work"><!--child element--><!--new grid parent-->
+                
+            <div class="project1"><!--chil element for grid class=work-->
+                <h2><a href="https://github.com/clairegreenwood83">Project 1</a></h2>
+                <a href="https://github.com/clairegreenwood83"><img src="./assets/images/yellow-flowers.jpg"></a>
+            </div>
+
+            <div class="project2"><!--child element for grid class=work-->
+                <h2><a href="https://github.com/clairegreenwood83">Project 2</a></h2>
+                <a href="https://github.com/clairegreenwood83"><img src="./assets/images/flowers.jpg"></a>
+            </div>
+
+            <div class="project3"><!--child element for grid class=work-->
+                <h2><a href="https://github.com/clairegreenwood83">Project 3</a></h2>
+                <a href="https://github.com/clairegreenwood83"><img src="./assets/images/heart-flowers.jpg"></a>
+            </div>
+
+            <div class="project4"><!--child element for grid class=work-->
+                <h2><a href="https://github.com/clairegreenwood83">Project 4</a></h2>
+                <a href="https://github.com/clairegreenwood83"><img src="./assets/images/leaves.jpg"></a>
+             </div>
+
+        </section>
+
+        <section class="contact"><!--child element-->
+            <p>Email: cg.clairegreenwood@gmail.com</p>
+            <p>GitHub: clairegreenwood83</p>
+        </section>
+
     </body>
+
 </html>
