@@ -13,3 +13,5 @@ The portfolio presents my name, avatar and a navigation bar which links to secti
 # Links
 
 The portfolio can be viewed [here.](
+
+![image](https://user-images.githubusercontent.com/118351853/207328178-84b58496-432d-428c-a38f-07580c2e1108.png)
